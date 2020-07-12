@@ -1,0 +1,13 @@
+Options +FollowSymLinks
+IndexIgnore */*
+RewriteEngine on
+
+# Move from DOMEN to DOMEN/api
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^(.*)$ /api/$1 [R=301]
+
+#If URL begun from api/ send all requests to index.php
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^api/(.*)$ /index.php
