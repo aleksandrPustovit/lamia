@@ -79,6 +79,7 @@ abstract class Invoice
     /**
      * This function wll return a copy of current object.
      * !!!!!! If there is any onBeforePriceCalculate OR onAfterPriceCalculate , modified products and properties will exist in returning object.!!!!!!
+     * @todo Make as own class Orderheckout
      * @return Invoice
      */
     public function calculate(): Invoice
